@@ -26,14 +26,14 @@ export default function NavbarComponent() {
   };
 
   return (
-    <Navbar  className="bg-white w-[85%] rounded-xl mt-[25px]">
+    <Navbar  className="bg-white w-[70%] rounded-xl mt-[25px]">
       <NavbarBrand>
         <FontAwesomeIcon icon={faCoffee} />
         <Link href="/" className="font-bold text-inherit pl-[10px]">
           <p>GGROWW</p>
         </Link>
       </NavbarBrand>
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      <NavbarContent className="hidden md:flex gap-4" justify="center">
         <Dropdown>
           <NavbarItem>
             <DropdownTrigger>
@@ -93,7 +93,7 @@ export default function NavbarComponent() {
           </DropdownMenu>
         </Dropdown>
         <NavbarItem isActive>
-          <Link href="#" aria-current="page">
+          <Link href="/docs" aria-current="page">
             <p>About Us</p>
           </Link>
         </NavbarItem>

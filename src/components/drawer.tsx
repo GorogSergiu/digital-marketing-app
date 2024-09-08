@@ -9,7 +9,12 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee, faJetFighterUp } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCoffee,
+  faJetFighterUp,
+  faBars,
+  faClose,
+} from "@fortawesome/free-solid-svg-icons";
 import { siteConfig } from "@/config/site";
 import { Link } from "@nextui-org/react";
 
@@ -42,14 +47,20 @@ export default function Drawer() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
+      <FontAwesomeIcon
+        onClick={toggleDrawer("right", false)}
+        icon={faClose}
+        size="xl"
+        color="black"
+        className="p-[15px] cursor-pointer"
+      />
       <List>
         {siteConfig.navItems.map((item, index) => (
           <ListItem key={index} disablePadding>
             <ListItemButton>
               <Link color={"foreground"} href={item.href} size="lg">
-                {item.label}
+                <p>{item.label}</p>
               </Link>
-              <ListItemText primary={index} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -77,7 +88,9 @@ export default function Drawer() {
   return (
     <div>
       <React.Fragment key={"right"}>
-        <Button onClick={toggleDrawer("right", true)}><p>Menu</p></Button>
+        <Button onClick={toggleDrawer("right", true)}>
+          <FontAwesomeIcon icon={faBars} color="black" size="xl" />
+        </Button>
         <SwipeableDrawer
           anchor={"right"}
           open={state["right"]}

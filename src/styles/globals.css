@@ -7,12 +7,12 @@
 }
 
 .bg-wave-top-homepage {
-  background-image: url("/wave-top-bg.svg");
+  background-image: url("/blue-wave.svg");
 }
 
 .homepage-h1-font {
-  font-family: "New Amsterdam", sans-serif;
-  font-weight: 700;
+  font-family: "Russo One", sans-serif;
+  font-weight: 400;
   font-style: normal;
 }
 
