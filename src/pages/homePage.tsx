@@ -4,12 +4,13 @@ import { motion } from "framer-motion";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import CounterCard from "@/components/counter-card";
 import ServiceCard from "@/components/service-card";
+import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 
 export default function HomePage() {
   return (
     <DefaultLayout>
       <section className="flex flex-col items-center justify-center">
-        <Parallax pages={2} style={{ top: "0", left: "0" }}>
+        <Parallax pages={2.4} style={{ top: "0", left: "0" }}>
           <ParallaxLayer offset={0} speed={1} factor={1}>
             <div className="w-[100vw] h-[100vh] flex items-center justify-center">
               <div className="w-[60%] flex flex-col items-center justify-center">
@@ -27,9 +28,10 @@ export default function HomePage() {
                   We help you grow online
                 </h1>
                 <p className="text-[#333] text-[14px] sm:text-[20px] md:text-[25px] lg:text-[30px] text-center mt-[20px] mb-[10px] font-bold">
-                  Digital marketing isn't one-size-fits-all. We'll collaborate
-                  with you to develop a tailored strategy that perfectly aligns
-                  with your business needs.
+                  Digital marketing isn't one-size-fits-all.
+                  <br />
+                  We'll collaborate with you to develop a tailored strategy that
+                  perfectly aligns with your business needs.
                 </p>
                 <div className="w-[40%] flex items-center justify-center mt-[30px] mb-[20px]">
                   <motion.div
@@ -70,7 +72,7 @@ export default function HomePage() {
               <CounterCard title="Revenue" value={112} type="million" />
             </div>
           </ParallaxLayer>
-          <ParallaxLayer offset={1} speed={0.5} factor={1}>
+          <ParallaxLayer offset={1.5} speed={0.5} factor={1}>
             <div className="w-[100vw] h-[600px] flex items-center justify-center">
               <div className="w-[60%]">
                 <div
@@ -86,16 +88,22 @@ export default function HomePage() {
                 >
                   Our services
                 </div>
-                <div className="flex flex-col md:flex-row gap-[50px] items-center justify-center">
-                  <div className="flex flex-col gap-5">
-                    <ServiceCard title="SEO" />
-                    <ServiceCard title="Web Development" />
-                    <ServiceCard title="Paid Traffic" />
+                <div className="flex flex-col md:flex-row gap-9 items-center justify-center">
+                  <div className="flex flex-col gap-9">
+                    <ServiceCard title="SEO" icon={faCoffee} />
+                    <ServiceCard title="Web Development" icon={faCoffee} />
+                    <ServiceCard title="Paid Traffic" icon={faCoffee} />
                   </div>
-                  <div className="flex flex-col gap-5">
-                    <ServiceCard title="UGC & Influencer Marketing" />
-                    <ServiceCard title="UX & UI" />
-                    <ServiceCard title="Web Analytics and CRO" />
+                  <div className="flex flex-col gap-9">
+                    <ServiceCard
+                      title="UGC & Influencer Marketing"
+                      icon={faCoffee}
+                    />
+                    <ServiceCard title="UX & UI" icon={faCoffee} />
+                    <ServiceCard
+                      title="Web Analytics and CRO"
+                      icon={faCoffee}
+                    />
                   </div>
                 </div>
               </div>
