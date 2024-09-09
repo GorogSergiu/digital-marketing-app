@@ -3,6 +3,7 @@ import { Button, Divider } from "@nextui-org/react";
 import { motion } from "framer-motion";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import CounterCard from "@/components/counter-card";
+import ServiceCard from "@/components/service-card";
 
 export default function HomePage() {
   return (
@@ -25,7 +26,7 @@ export default function HomePage() {
                 >
                   We help you grow online
                 </h1>
-                <p className="text-[#333] text-[14px] sm:text-[20px] md:text-[25px] lg:text-[30px] text-center mt-[20px] mb-[10px]">
+                <p className="text-[#333] text-[14px] sm:text-[20px] md:text-[25px] lg:text-[30px] text-center mt-[20px] mb-[10px] font-bold">
                   Digital marketing isn't one-size-fits-all. We'll collaborate
                   with you to develop a tailored strategy that perfectly aligns
                   with your business needs.
@@ -45,7 +46,9 @@ export default function HomePage() {
                       variant="shadow"
                       className="w-[250px] h-[50px] bg-[#007BFF]"
                     >
-                      <p className="text-[32px] text-[white]">LET'S TALK</p>
+                      <h3 className="text-[32px] text-[white] font-3d">
+                        LET'S TALK
+                      </h3>
                     </Button>
                   </motion.div>
                 </div>
@@ -57,21 +60,21 @@ export default function HomePage() {
               <CounterCard title="Clients" value={447} />
               <Divider
                 orientation="vertical"
-                className="hidden md:flex h-[200px] w-[10px]"
+                className="hidden lg:flex h-[200px] w-[10px] bg-[#FF6347] rounded"
               />
               <CounterCard title="Accounts Managed" value={3} type="thousand" />
               <Divider
                 orientation="vertical"
-                className="hidden md:flex h-[200px] w-[10px]"
+                className="hidden lg:flex h-[200px] w-[10px] bg-[#FF6347] rounded"
               />
               <CounterCard title="Revenue" value={112} type="million" />
             </div>
           </ParallaxLayer>
           <ParallaxLayer offset={1} speed={0.5} factor={1}>
             <div className="w-[100vw] h-[600px] flex items-center justify-center">
-              <div className="w-[80%]">
+              <div className="w-[60%]">
                 <div
-                  className="text-[70px] font-3d"
+                  className="text-[70px] font-3d text-center text-[#FF6347] mb-[100px]"
                   style={{
                     textShadow: `
                       2px 2px 0 #A0D7FF,
@@ -81,7 +84,19 @@ export default function HomePage() {
                     `,
                   }}
                 >
-                  Second Section
+                  Our services
+                </div>
+                <div className="flex flex-col md:flex-row gap-[50px] items-center justify-center">
+                  <div className="flex flex-col gap-5">
+                    <ServiceCard title="SEO" />
+                    <ServiceCard title="Web Development" />
+                    <ServiceCard title="Paid Traffic" />
+                  </div>
+                  <div className="flex flex-col gap-5">
+                    <ServiceCard title="UGC & Influencer Marketing" />
+                    <ServiceCard title="UX & UI" />
+                    <ServiceCard title="Web Analytics and CRO" />
+                  </div>
                 </div>
               </div>
             </div>

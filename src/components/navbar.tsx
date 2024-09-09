@@ -12,7 +12,7 @@ import {
 } from "@nextui-org/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoffee } from "@fortawesome/free-solid-svg-icons";
-import Drawer from "../components/drawer"
+import Drawer from "../components/drawer";
 
 export default function NavbarComponent() {
   const icons = {
@@ -26,7 +26,7 @@ export default function NavbarComponent() {
   };
 
   return (
-    <Navbar  className="bg-white w-[70%] rounded-xl mt-[25px]">
+    <Navbar className="bg-white w-[70%] rounded-xl mt-[25px]">
       <NavbarBrand>
         <FontAwesomeIcon icon={faCoffee} />
         <Link href="/" className="font-bold text-inherit pl-[10px]">
@@ -44,7 +44,7 @@ export default function NavbarComponent() {
                 radius="sm"
                 variant="light"
               >
-                <p>Services</p>
+                Services
               </Button>
             </DropdownTrigger>
           </NavbarItem>
@@ -94,24 +94,24 @@ export default function NavbarComponent() {
         </Dropdown>
         <NavbarItem isActive>
           <Link href="/docs" aria-current="page">
-            <p>About Us</p>
+            About Us
           </Link>
         </NavbarItem>
         <NavbarItem>
           <Link color="foreground" href="#">
-            <p>Contact Us</p>
+            Contact Us
           </Link>
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end" className="hidden md:flex">
         <NavbarItem>
           <Button as={Link} color="primary" href="#" variant="flat">
-            <p>View Plans</p>
+            View Plans
           </Button>
         </NavbarItem>
       </NavbarContent>
       <NavbarContent className="md:hidden" justify="end">
-        <Drawer/>
+        <Drawer />
       </NavbarContent>
     </Navbar>
   );
