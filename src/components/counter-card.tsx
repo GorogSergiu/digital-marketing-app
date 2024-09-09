@@ -1,4 +1,4 @@
-import { Button, Card, CardBody, Divider } from "@nextui-org/react";
+import { Card, CardBody } from "@nextui-org/react";
 import Counter from "@/components/counter";
 
 type CounterCardProps = {
@@ -22,4 +22,4 @@ const CounterCard: React.FC<CounterCardProps> = ({ type, title, value }) => {
   );
 };
 
-export default CounterCard
+export default CounterCard;
