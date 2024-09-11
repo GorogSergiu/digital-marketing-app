@@ -5,13 +5,15 @@ import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import CounterCard from "@/components/counter-card";
 import ServiceCard from "@/components/service-card";
 import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import Carousel from "@/components/testimonials";
+import BrandsList from "@/components/brands-list";
 
 export default function HomePage() {
   return (
     <DefaultLayout>
       <section className="flex flex-col items-center justify-center">
-        <Parallax pages={2.4} style={{ top: "0", left: "0" }}>
-          <ParallaxLayer offset={0} speed={1} factor={1}>
+        <Parallax pages={4.5} style={{ top: "0", left: "0" }}>
+          <ParallaxLayer offset={0} speed={0.5} factor={1}>
             <div className="w-[100vw] h-[100vh] flex items-center justify-center">
               <div className="w-[60%] flex flex-col items-center justify-center">
                 <h1
@@ -45,8 +47,8 @@ export default function HomePage() {
                     }}
                   >
                     <Button
-                      variant="shadow"
-                      className="w-[250px] h-[50px] bg-[#007BFF]"
+                      variant="solid"
+                      className="w-[250px] h-[50px] bg-[#007BFF] hover:bg-[#FF6347] p-[10px] rounded-[5px] border-none shadow-[6px_6px_0px_0px_rgba(255,99,71,1)]"
                     >
                       <h3 className="text-[32px] text-[white] font-3d">
                         LET'S TALK
@@ -57,26 +59,45 @@ export default function HomePage() {
               </div>
             </div>
           </ParallaxLayer>
-          <ParallaxLayer offset={0.9} speed={1} factor={0.8}>
-            <div className="w-[100vw] h-[100vh] flex flex-col md:flex-row items-center justify-center gap-[50px]">
-              <CounterCard title="Clients" value={447} />
-              <Divider
-                orientation="vertical"
-                className="hidden lg:flex h-[200px] w-[10px] bg-[#FF6347] rounded"
-              />
-              <CounterCard title="Accounts Managed" value={3} type="thousand" />
-              <Divider
-                orientation="vertical"
-                className="hidden lg:flex h-[200px] w-[10px] bg-[#FF6347] rounded"
-              />
-              <CounterCard title="Revenue" value={112} type="million" />
+          <ParallaxLayer offset={1} speed={0.5} factor={1}>
+            <div className="flex flex-col w-[100vw] h-[100vh] justify-center items-center">
+              <div
+                className="text-[50px] md:text-[70px] font-3d text-center text-[#FF6347] mb-[100px] w-[60%]"
+                style={{
+                  textShadow: `
+                      2px 2px 0 #A0D7FF,
+                      4px 4px 0 #A0D7FF,
+                      6px 6px 0 #A0D7FF,
+                      8px 8px 0 #A0D7FF
+                    `,
+                }}
+              >
+                Our achievements
+              </div>
+              <div className="flex flex-col md:flex-row items-center justify-center gap-[50px]">
+                <CounterCard title="Clients" value={447} />
+                <Divider
+                  orientation="vertical"
+                  className="hidden lg:flex h-[200px] w-[10px] bg-[#FF6347] rounded"
+                />
+                <CounterCard
+                  title="Accounts Managed"
+                  value={3}
+                  type="thousand"
+                />
+                <Divider
+                  orientation="vertical"
+                  className="hidden lg:flex h-[200px] w-[10px] bg-[#FF6347] rounded"
+                />
+                <CounterCard title="Revenue" value={112} type="million" />
+              </div>
             </div>
           </ParallaxLayer>
-          <ParallaxLayer offset={1.5} speed={0.5} factor={1}>
-            <div className="w-[100vw] h-[600px] flex items-center justify-center">
+          <ParallaxLayer offset={2} speed={0.5} factor={1}>
+            <div className="w-[100vw] h-[100vh] flex items-center justify-center">
               <div className="w-[60%]">
                 <div
-                  className="text-[70px] font-3d text-center text-[#FF6347] mb-[100px]"
+                  className="text-[50px] md:text-[70px] font-3d text-center text-[#FF6347] mb-[100px]"
                   style={{
                     textShadow: `
                       2px 2px 0 #A0D7FF,
@@ -106,6 +127,31 @@ export default function HomePage() {
                     />
                   </div>
                 </div>
+              </div>
+            </div>
+          </ParallaxLayer>
+          <ParallaxLayer offset={3} speed={0.5} factor={1}>
+            <div className="w-[100vw] h-[100vh] flex flex-col items-center justify-center">
+              <div className="w-[60%]">
+                <div
+                  className="text-[40px] lg:text-[60px] font-3d text-center text-[#FF6347] mb-[100px]"
+                  style={{
+                    textShadow: `
+                      2px 2px 0 #A0D7FF,
+                      4px 4px 0 #A0D7FF,
+                      6px 6px 0 #A0D7FF,
+                      8px 8px 0 #A0D7FF
+                    `,
+                  }}
+                >
+                  We love to help people achive their dreams
+                </div>
+              </div>
+              <div className="ml-[50px] mr-[50px] mb-[100px]">
+                <Carousel />
+              </div>
+              <div className="ml-[50px] mr-[50px]">
+                <BrandsList />
               </div>
             </div>
           </ParallaxLayer>

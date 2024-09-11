@@ -11,24 +11,25 @@ import {
   DropdownMenu,
 } from "@nextui-org/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import { faChevronCircleDown } from "@fortawesome/free-solid-svg-icons";
 import Drawer from "../components/drawer";
+import { motion } from "framer-motion";
 
 export default function NavbarComponent() {
   const icons = {
-    chevron: <FontAwesomeIcon icon={faCoffee} />,
-    scale: <FontAwesomeIcon icon={faCoffee} />,
-    lock: <FontAwesomeIcon icon={faCoffee} />,
-    activity: <FontAwesomeIcon icon={faCoffee} />,
-    flash: <FontAwesomeIcon icon={faCoffee} />,
-    server: <FontAwesomeIcon icon={faCoffee} />,
-    user: <FontAwesomeIcon icon={faCoffee} />,
+    chevron: <FontAwesomeIcon icon={faChevronCircleDown} />,
+    scale: <FontAwesomeIcon icon={faChevronCircleDown} />,
+    lock: <FontAwesomeIcon icon={faChevronCircleDown} />,
+    activity: <FontAwesomeIcon icon={faChevronCircleDown} />,
+    flash: <FontAwesomeIcon icon={faChevronCircleDown} />,
+    server: <FontAwesomeIcon icon={faChevronCircleDown} />,
+    user: <FontAwesomeIcon icon={faChevronCircleDown} />,
   };
 
   return (
     <Navbar className="bg-white w-[70%] rounded-xl mt-[25px]">
       <NavbarBrand>
-        <FontAwesomeIcon icon={faCoffee} />
+        <FontAwesomeIcon icon={faChevronCircleDown} />
         <Link href="/" className="font-bold text-inherit pl-[10px]">
           <p>GGROWW</p>
         </Link>
@@ -44,7 +45,7 @@ export default function NavbarComponent() {
                 radius="sm"
                 variant="light"
               >
-                Services
+                <p className="font-[500] text-[1rem]">Services</p>
               </Button>
             </DropdownTrigger>
           </NavbarItem>
@@ -105,9 +106,23 @@ export default function NavbarComponent() {
       </NavbarContent>
       <NavbarContent justify="end" className="hidden md:flex">
         <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
-            View Plans
-          </Button>
+          <motion.div
+            className="box"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{
+              type: "spring",
+              stiffness: 400,
+              damping: 17,
+            }}
+          >
+            <Button
+              variant="solid"
+              className="bg-[#007BFF] hover:bg-[#FF6347] p-[10px] rounded-[5px] border-none"
+            >
+              <p className="text-[12px] text-[white] font-bold">VIEW PLANS</p>
+            </Button>
+          </motion.div>
         </NavbarItem>
       </NavbarContent>
       <NavbarContent className="md:hidden" justify="end">
