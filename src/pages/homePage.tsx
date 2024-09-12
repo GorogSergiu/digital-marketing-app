@@ -131,7 +131,7 @@ export default function HomePage() {
             </div>
           </ParallaxLayer>
           <ParallaxLayer offset={3} speed={0.5} factor={1}>
-            <div className="w-[100vw] h-[100vh] flex flex-col items-center justify-center">
+            <div className="w-[100vw] h-[100vh] flex flex-col items-center justify-center mt-[200px]">
               <div className="w-[60%]">
                 <div
                   className="text-[40px] lg:text-[60px] font-3d text-center text-[#FF6347] mb-[100px]"
