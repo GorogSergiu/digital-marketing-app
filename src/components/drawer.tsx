@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 import Collapse from "@mui/material/Collapse";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
+import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemButton from "@mui/material/ListItemButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -45,7 +46,7 @@ export default function Drawer() {
       setState({ ...state, [anchor]: open });
     };
 
-  const list = () => (
+  const list = (anchor: Anchor) => (
     <Box sx={{ width: 250 }} role="presentation">
       <div className="p-[15px]">
         <FontAwesomeIcon
@@ -59,7 +60,7 @@ export default function Drawer() {
       <ListItemButton onClick={handleClick}>
         <ListItemText primary="Services" className="text-[600]" />
       </ListItemButton>
-      <Collapse in={open} timeout="auto" unmountOnExit>
+      <Collapse in={!open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           <div className="flex flex-col ml-[20px] gap-3">
             <Link
