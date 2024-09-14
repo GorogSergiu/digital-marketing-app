@@ -15,7 +15,7 @@ export default function HomePage() {
   return (
     <DefaultLayout>
       <section className="flex flex-col items-center justify-center">
-        <Parallax pages={isMobile ? 2.5 : 4.5} style={{ top: "0", left: "0" }}>
+        <Parallax pages={isMobile ? 5 : 4.5} style={{ top: "0", left: "0" }}>
           {/* First Section */}
           <ParallaxLayer offset={0} speed={0.5} factor={1}>
             <div className="w-full min-h-screen flex items-center justify-center">
@@ -156,7 +156,7 @@ export default function HomePage() {
               <div className="w-full ml-[10px] mr-[10px] mb-[50px] md:mb-[100px]">
                 <Carousel />
               </div>
-              <div className="w-[70%] ml-[10px] mr-[10px]">
+              <div className="md:w-[70%] ml-[10px] mr-[10px]">
                 <BrandsList />
               </div>
             </div>
