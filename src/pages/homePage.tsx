@@ -156,7 +156,7 @@ export default function HomePage() {
               <div className="w-full ml-[10px] mr-[10px] mb-[50px] md:mb-[100px]">
                 <Carousel />
               </div>
-              <div className="w-full ml-[10px] mr-[10px]">
+              <div className="w-[70%] ml-[10px] mr-[10px]">
                 <BrandsList />
               </div>
             </div>
