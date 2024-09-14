@@ -21,7 +21,7 @@ export default function HomePage() {
             <div className="w-full min-h-screen flex items-center justify-center">
               <div className="w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] flex flex-col items-center justify-center">
                 <h1
-                  className="text-[80px] sm:text-[90px] md:text-[100px] lg:text-[130px] text-center font-3d leading-[1] text-[#FF6347] mx-auto"
+                  className="text-[70px] sm:text-[80px] md:text-[100px] lg:text-[130px] text-center font-3d leading-[1] text-[#FF6347] mx-auto"
                   style={{
                     textShadow: `
                       2px 2px 0 #A0D7FF,
