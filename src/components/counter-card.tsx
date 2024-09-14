@@ -13,7 +13,6 @@ const CounterCard: React.FC<CounterCardProps> = ({ type, title, value }) => {
     <motion.div
       className="box"
       whileHover={{ scale: 1.2 }}
-      whileTap={{ scale: 0.9 }}
       transition={{
         type: "spring",
         stiffness: 400,

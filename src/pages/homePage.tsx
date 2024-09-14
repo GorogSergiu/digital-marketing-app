@@ -126,7 +126,7 @@ export default function HomePage() {
                     />
                     <ServiceCard title="UX & UI" icon={faCoffee} />
                     <ServiceCard
-                      title="Web Analytics and CRO"
+                      title="Web Analytics & CRO"
                       icon={faCoffee}
                     />
                   </div>

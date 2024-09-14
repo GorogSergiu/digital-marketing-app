@@ -14,6 +14,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronCircleDown } from "@fortawesome/free-solid-svg-icons";
 import Drawer from "../components/drawer";
 import { motion } from "framer-motion";
+import { siteConfig } from "@/config/site";
+import { useState } from "react";
 
 export default function NavbarComponent() {
   const icons = {
@@ -25,6 +27,7 @@ export default function NavbarComponent() {
     server: <FontAwesomeIcon icon={faChevronCircleDown} />,
     user: <FontAwesomeIcon icon={faChevronCircleDown} />,
   };
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <Navbar className="bg-white w-[70%] rounded-xl mt-[25px]">
@@ -35,15 +38,19 @@ export default function NavbarComponent() {
         </Link>
       </NavbarBrand>
       <NavbarContent className="hidden md:flex gap-4" justify="center">
-        <Dropdown>
+        <Dropdown isOpen={isOpen} onOpenChange={setIsOpen}>
           <NavbarItem>
             <DropdownTrigger>
               <Button
+                as={Link}
+                href="/"
                 disableRipple
                 className="p-0 bg-transparent data-[hover=true]:bg-transparent"
                 endContent={icons.chevron}
                 radius="sm"
                 variant="light"
+                onMouseEnter={() => setIsOpen(true)}
+                onMouseLeave={() => setIsOpen(false)}
               >
                 <p className="font-[500] text-[1rem]">Services</p>
               </Button>
@@ -55,54 +62,28 @@ export default function NavbarComponent() {
             itemClasses={{
               base: "gap-4",
             }}
+            onMouseEnter={() => setIsOpen(true)}
+            onMouseLeave={() => setIsOpen(false)}
           >
-            <DropdownItem
-              key="autoscaling"
-              description="ACME scales apps to meet user demand, automagically, based on load."
-              startContent={icons.scale}
-            >
-              Autoscaling
-            </DropdownItem>
-            <DropdownItem
-              key="usage_metrics"
-              description="Real-time metrics to debug issues. Slow query added? We’ll show you exactly where."
-              startContent={icons.activity}
-            >
-              Usage Metrics
-            </DropdownItem>
-            <DropdownItem
-              key="production_ready"
-              description="ACME runs on ACME, join us and others serving requests at web scale."
-              startContent={icons.flash}
-            >
-              Production Ready
-            </DropdownItem>
-            <DropdownItem
-              key="99_uptime"
-              description="Applications stay on the grid with high availability and high uptime guarantees."
-              startContent={icons.server}
-            >
-              +99% Uptime
-            </DropdownItem>
-            <DropdownItem
-              key="supreme_support"
-              description="Overcome any challenge with a supporting team ready to respond."
-              startContent={icons.user}
-            >
-              +Supreme Support
-            </DropdownItem>
+            {siteConfig.dropDownMenuItems.map((item, index) => (
+              <DropdownItem
+                key={index}
+                description={item.description}
+                className=""
+                color="danger"
+              >
+                {item.label}
+              </DropdownItem>
+            ))}
           </DropdownMenu>
         </Dropdown>
-        <NavbarItem isActive>
-          <Link href="/docs" aria-current="page">
-            About Us
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Contact Us
-          </Link>
-        </NavbarItem>
+        {siteConfig.navItems.map((item, index) => (
+          <NavbarItem isActive key={index}>
+            <Link href={item.href} aria-current="page" className="text-[black]">
+              {item.label}
+            </Link>
+          </NavbarItem>
+        ))}
       </NavbarContent>
       <NavbarContent justify="end" className="hidden md:flex">
         <NavbarItem>

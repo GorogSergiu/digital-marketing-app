@@ -5,58 +5,44 @@ export const siteConfig = {
   description: "GGROWW online smarter and faster",
   navItems: [
     {
-      label: "Home",
-      href: "/",
-    },
-    {
-      label: "Docs",
+      label: "About Us",
       href: "/docs",
     },
     {
-      label: "Pricing",
+      label: "Contact Us",
       href: "/pricing",
     },
-    {
-      label: "Blog",
-      href: "/blog",
-    },
-    {
-      label: "About",
-      href: "/about",
-    },
   ],
-  navMenuItems: [
+  dropDownMenuItems: [
     {
-      label: "Profile",
-      href: "/profile",
+      label: "SEO",
+      href: "/services/seo",
+      description: "Rise to the Top with Strategic On-Site SEO Techniques",
     },
     {
-      label: "Dashboard",
-      href: "/dashboard",
+      label: "Web Development",
+      href: "/services/web-development",
+      description: "Web Development that Brings Your Vision to Life",
     },
     {
-      label: "Projects",
-      href: "/projects",
+      label: "Paid Traffic",
+      href: "/services/paid-traffic",
+      description: "Our main service is to make your business thrive",
     },
     {
-      label: "Team",
-      href: "/team",
+      label: "UGC & Influencer Marketing",
+      href: "/services/ugc-influencer-marketing",
+      description: "Influence Your Brand Growth",
     },
     {
-      label: "Calendar",
-      href: "/calendar",
+      label: "UX & UI",
+      href: "/services/ux-ui",
+      description: "Let's Design Digital Experiences that Set You Apart",
     },
     {
-      label: "Settings",
-      href: "/settings",
-    },
-    {
-      label: "Help & Feedback",
-      href: "/help-feedback",
-    },
-    {
-      label: "Logout",
-      href: "/logout",
+      label: "Web Analytics & CRO",
+      href: "/services/web-analytics-cro",
+      description: "Achieve Sustainable Growth with Proven CRO Techniques",
     },
   ],
   links: {
