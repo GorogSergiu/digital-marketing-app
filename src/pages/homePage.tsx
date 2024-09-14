@@ -7,17 +7,21 @@ import ServiceCard from "@/components/service-card";
 import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 import Carousel from "@/components/testimonials";
 import BrandsList from "@/components/brands-list";
+import { useMediaQuery } from "react-responsive";
 
 export default function HomePage() {
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+
   return (
     <DefaultLayout>
       <section className="flex flex-col items-center justify-center">
-        <Parallax pages={4.5} style={{ top: "0", left: "0" }}>
+        <Parallax pages={isMobile ? 2.5 : 4.5} style={{ top: "0", left: "0" }}>
+          {/* First Section */}
           <ParallaxLayer offset={0} speed={0.5} factor={1}>
-            <div className="w-[100vw] h-[100vh] flex items-center justify-center">
-              <div className="w-[60%] flex flex-col items-center justify-center">
+            <div className="w-full min-h-screen flex items-center justify-center">
+              <div className="w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] flex flex-col items-center justify-center">
                 <h1
-                  className="text-[80px] sm:text-[90px] md:text-[100px] lg:text-[130px] text-center font-3d leading-[1] text-[#FF6347]"
+                  className="text-[80px] sm:text-[90px] md:text-[100px] lg:text-[130px] text-center font-3d leading-[1] text-[#FF6347] mx-auto"
                   style={{
                     textShadow: `
                       2px 2px 0 #A0D7FF,
@@ -29,13 +33,13 @@ export default function HomePage() {
                 >
                   We help you grow online
                 </h1>
-                <p className="text-[#333] text-[14px] sm:text-[20px] md:text-[25px] lg:text-[30px] text-center mt-[20px] mb-[10px] font-bold">
+                <p className="text-[#333] text-[20px] sm:text-[25px] md:text-[30px] text-center mt-[20px] mb-[10px] font-bold">
                   Digital marketing isn't one-size-fits-all.
                   <br />
                   We'll collaborate with you to develop a tailored strategy that
                   perfectly aligns with your business needs.
                 </p>
-                <div className="w-[40%] flex items-center justify-center mt-[30px] mb-[20px]">
+                <div className="w-full sm:w-[60%] md:w-[40%] flex items-center justify-center mt-[30px] mb-[20px]">
                   <motion.div
                     className="box"
                     whileHover={{ scale: 1.2 }}
@@ -48,9 +52,9 @@ export default function HomePage() {
                   >
                     <Button
                       variant="solid"
-                      className="w-[250px] h-[50px] bg-[#007BFF] hover:bg-[#FF6347] p-[10px] rounded-[5px] border-none shadow-[6px_6px_0px_0px_rgba(255,99,71,1)]"
+                      className="w-[200px] sm:w-[250px] h-[50px] bg-[#007BFF] hover:bg-[#FF6347] p-[10px] rounded-[5px] border-none shadow-[6px_6px_0px_0px_rgba(255,99,71,1)]"
                     >
-                      <h3 className="text-[32px] text-[white] font-3d">
+                      <h3 className="text-[24px] sm:text-[32px] text-[white] font-3d">
                         LET'S TALK
                       </h3>
                     </Button>
@@ -59,17 +63,19 @@ export default function HomePage() {
               </div>
             </div>
           </ParallaxLayer>
+
+          {/* Second Section */}
           <ParallaxLayer offset={1} speed={0.5} factor={1}>
-            <div className="flex flex-col w-[100vw] h-[100vh] justify-center items-center">
+            <div className="w-full min-h-screen flex flex-col justify-center items-center p-4 md:p-8">
               <div
-                className="text-[50px] md:text-[70px] font-3d text-center text-[#FF6347] mb-[100px] w-[60%]"
+                className="text-[40px] sm:text-[50px] md:text-[70px] font-3d text-center text-[#FF6347] mb-[50px] md:mb-[100px] w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%]"
                 style={{
                   textShadow: `
-                      2px 2px 0 #A0D7FF,
-                      4px 4px 0 #A0D7FF,
-                      6px 6px 0 #A0D7FF,
-                      8px 8px 0 #A0D7FF
-                    `,
+                    2px 2px 0 #A0D7FF,
+                    4px 4px 0 #A0D7FF,
+                    6px 6px 0 #A0D7FF,
+                    8px 8px 0 #A0D7FF
+                  `,
                 }}
               >
                 Our achievements
@@ -80,11 +86,7 @@ export default function HomePage() {
                   orientation="vertical"
                   className="hidden lg:flex h-[200px] w-[10px] bg-[#FF6347] rounded"
                 />
-                <CounterCard
-                  title="Accounts Managed"
-                  value={3}
-                  type="thousand"
-                />
+                <CounterCard title="Accounts Managed" value={3} type="thousand" />
                 <Divider
                   orientation="vertical"
                   className="hidden lg:flex h-[200px] w-[10px] bg-[#FF6347] rounded"
@@ -93,11 +95,13 @@ export default function HomePage() {
               </div>
             </div>
           </ParallaxLayer>
+
+          {/* Third Section */}
           <ParallaxLayer offset={2} speed={0.5} factor={1}>
-            <div className="w-[100vw] h-[100vh] flex items-center justify-center">
-              <div className="w-[60%]">
+            <div className="w-full min-h-screen flex items-center justify-center">
+              <div className="w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%]">
                 <div
-                  className="text-[50px] md:text-[70px] font-3d text-center text-[#FF6347] mb-[100px]"
+                  className="text-[40px] sm:text-[50px] md:text-[70px] font-3d text-center text-[#FF6347] mb-[50px] md:mb-[100px]"
                   style={{
                     textShadow: `
                       2px 2px 0 #A0D7FF,
@@ -130,11 +134,13 @@ export default function HomePage() {
               </div>
             </div>
           </ParallaxLayer>
+
+          {/* Fourth Section */}
           <ParallaxLayer offset={3} speed={0.5} factor={1}>
-            <div className="w-[100vw] h-[100vh] flex flex-col items-center justify-center mt-[200px]">
-              <div className="w-[60%]">
+            <div className="w-full min-h-screen flex flex-col items-center justify-center mt-[50px] md:mt-[200px] p-4">
+              <div className="w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%]">
                 <div
-                  className="text-[40px] lg:text-[60px] font-3d text-center text-[#FF6347] mb-[100px]"
+                  className="text-[30px] sm:text-[40px] lg:text-[60px] font-3d text-center text-[#FF6347] mb-[50px] md:mb-[100px]"
                   style={{
                     textShadow: `
                       2px 2px 0 #A0D7FF,
@@ -144,13 +150,13 @@ export default function HomePage() {
                     `,
                   }}
                 >
-                  We love to help people achive their dreams
+                  We love to help people achieve their dreams
                 </div>
               </div>
-              <div className="ml-[50px] mr-[50px] mb-[100px]">
+              <div className="w-full ml-[10px] mr-[10px] mb-[50px] md:mb-[100px]">
                 <Carousel />
               </div>
-              <div className="ml-[50px] mr-[50px]">
+              <div className="w-full ml-[10px] mr-[10px]">
                 <BrandsList />
               </div>
             </div>
