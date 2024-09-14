@@ -5,7 +5,6 @@ import Button from "@mui/material/Button";
 import Collapse from "@mui/material/Collapse";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemButton from "@mui/material/ListItemButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -47,7 +46,11 @@ export default function Drawer() {
     };
 
   const list = (anchor: Anchor) => (
-    <Box sx={{ width: 250 }} role="presentation">
+    <Box
+      sx={{ width: 250 }}
+      role="presentation"
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
       <div className="p-[15px]">
         <FontAwesomeIcon
           onClick={toggleDrawer("right", false)}
