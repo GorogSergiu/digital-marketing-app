@@ -8,6 +8,7 @@ import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 import Carousel from "@/components/testimonials";
 import BrandsList from "@/components/brands-list";
 import { useMediaQuery } from "react-responsive";
+import { customTextShadow } from "@/styles/customStyles";
 
 export default function HomePage() {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
@@ -15,25 +16,27 @@ export default function HomePage() {
   return (
     <DefaultLayout>
       <section className="flex flex-col items-center justify-center">
-        <Parallax pages={isMobile ? 5 : 4.5} style={{ top: "0", left: "0" }}>
+        <Parallax pages={isMobile ? 5 : 4.5} style={{ top: "0", left: "0", backgroundColor: "#FFF1D0" }}>
           {/* First Section */}
-          <ParallaxLayer offset={0} speed={0.5} factor={1}>
+          <ParallaxLayer
+            offset={0}
+            speed={1}
+            factor={1.5}
+            style={{
+              backgroundImage: "url(/bej-wave.svg)",
+              backgroundSize: "cover",
+            }}
+          />
+          <ParallaxLayer offset={0.1} speed={0.5} factor={1}>
             <div className="w-full min-h-screen flex items-center justify-center">
               <div className="w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] flex flex-col items-center justify-center">
                 <h1
-                  className="text-[70px] sm:text-[80px] md:text-[100px] lg:text-[130px] text-center font-3d leading-[1] text-[#FF6347] mx-auto"
-                  style={{
-                    textShadow: `
-                      2px 2px 0 #A0D7FF,
-                      4px 4px 0 #A0D7FF,
-                      6px 6px 0 #A0D7FF,
-                      8px 8px 0 #A0D7FF
-                    `,
-                  }}
+                  className="text-[70px] sm:text-[80px] md:text-[100px] lg:text-[130px] text-center font-3d leading-[1] text-headersColor mx-auto"
+                  style={customTextShadow}
                 >
                   We help you grow online
                 </h1>
-                <p className="text-[#333] text-[20px] sm:text-[25px] md:text-[30px] text-center mt-[20px] mb-[10px] font-bold">
+                <p className="text-textColor text-[20px] sm:text-[25px] md:text-[30px] text-center mt-[20px] mb-[10px] font-bold">
                   Digital marketing isn't one-size-fits-all.
                   <br />
                   We'll collaborate with you to develop a tailored strategy that
@@ -52,9 +55,9 @@ export default function HomePage() {
                   >
                     <Button
                       variant="solid"
-                      className="w-[200px] sm:w-[250px] h-[50px] bg-[#007BFF] hover:bg-[#FF6347] p-[10px] rounded-[5px] border-none shadow-[6px_6px_0px_0px_rgba(255,99,71,1)]"
+                      className="w-[200px] sm:w-[250px] h-[50px] bg-buttonsColor hover:bg-buttonsHover p-[10px] rounded-[5px] border-none shadow-[6px_6px_0px_0px_#BBE0E8]"
                     >
-                      <h3 className="text-[24px] sm:text-[32px] text-[white] font-3d">
+                      <h3 className="text-[24px] sm:text-[32px] text-headersColor font-3d">
                         LET'S TALK
                       </h3>
                     </Button>
@@ -65,18 +68,20 @@ export default function HomePage() {
           </ParallaxLayer>
 
           {/* Second Section */}
+          <ParallaxLayer
+            offset={1}
+            speed={1}
+            factor={1.5}
+            style={{
+              backgroundImage: "url(/top-middle-wave.svg)",
+              backgroundSize: "cover",
+            }}
+          />
           <ParallaxLayer offset={1} speed={0.5} factor={1}>
             <div className="w-full min-h-screen flex flex-col justify-center items-center p-4 md:p-8">
               <div
-                className="text-[40px] sm:text-[50px] md:text-[70px] font-3d text-center text-[#FF6347] mb-[50px] md:mb-[100px] w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%]"
-                style={{
-                  textShadow: `
-                    2px 2px 0 #A0D7FF,
-                    4px 4px 0 #A0D7FF,
-                    6px 6px 0 #A0D7FF,
-                    8px 8px 0 #A0D7FF
-                  `,
-                }}
+                className="text-[40px] sm:text-[50px] md:text-[70px] font-3d text-center text-headersColor mb-[50px] md:mb-[100px] w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%]"
+                style={customTextShadow}
               >
                 Our achievements
               </div>
@@ -84,32 +89,38 @@ export default function HomePage() {
                 <CounterCard title="Clients" value={447} />
                 <Divider
                   orientation="vertical"
-                  className="hidden lg:flex h-[200px] w-[10px] bg-[#FF6347] rounded"
+                  className="hidden lg:flex h-[200px] w-[10px] bg-cardBorderColor rounded"
                 />
-                <CounterCard title="Accounts Managed" value={3} type="thousand" />
+                <CounterCard
+                  title="Accounts Managed"
+                  value={3}
+                  type="thousand"
+                />
                 <Divider
                   orientation="vertical"
-                  className="hidden lg:flex h-[200px] w-[10px] bg-[#FF6347] rounded"
+                  className="hidden lg:flex h-[200px] w-[10px] bg-cardBorderColor rounded"
                 />
-                <CounterCard title="Revenue" value={112} type="million" />
+                <CounterCard title="Revenue" value={52} type="million" />
               </div>
             </div>
           </ParallaxLayer>
 
           {/* Third Section */}
+          <ParallaxLayer
+            offset={2}
+            speed={1}
+            factor={1.5}
+            style={{
+              backgroundImage: "url(/bottom-middle-wave.svg)",
+              backgroundSize: "cover",
+            }}
+          />
           <ParallaxLayer offset={2} speed={0.5} factor={1}>
             <div className="w-full min-h-screen flex items-center justify-center">
               <div className="w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%]">
                 <div
-                  className="text-[40px] sm:text-[50px] md:text-[70px] font-3d text-center text-[#FF6347] mb-[50px] md:mb-[100px]"
-                  style={{
-                    textShadow: `
-                      2px 2px 0 #A0D7FF,
-                      4px 4px 0 #A0D7FF,
-                      6px 6px 0 #A0D7FF,
-                      8px 8px 0 #A0D7FF
-                    `,
-                  }}
+                  className="text-[40px] sm:text-[50px] md:text-[70px] font-3d text-center text-headersColor mb-[50px] md:mb-[100px]"
+                  style={customTextShadow}
                 >
                   Our services
                 </div>
@@ -125,10 +136,7 @@ export default function HomePage() {
                       icon={faCoffee}
                     />
                     <ServiceCard title="UX & UI" icon={faCoffee} />
-                    <ServiceCard
-                      title="Web Analytics & CRO"
-                      icon={faCoffee}
-                    />
+                    <ServiceCard title="Web Analytics & CRO" icon={faCoffee} />
                   </div>
                 </div>
               </div>
@@ -140,15 +148,8 @@ export default function HomePage() {
             <div className="w-full min-h-screen flex flex-col items-center justify-center mt-[50px] md:mt-[200px] p-4">
               <div className="w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%]">
                 <div
-                  className="text-[30px] sm:text-[40px] lg:text-[60px] font-3d text-center text-[#FF6347] mb-[50px] md:mb-[100px]"
-                  style={{
-                    textShadow: `
-                      2px 2px 0 #A0D7FF,
-                      4px 4px 0 #A0D7FF,
-                      6px 6px 0 #A0D7FF,
-                      8px 8px 0 #A0D7FF
-                    `,
-                  }}
+                  className="text-[30px] sm:text-[40px] lg:text-[60px] font-3d text-center text-headersColor mb-[50px] md:mb-[100px]"
+                  style={customTextShadow}
                 >
                   We love to help people achieve their dreams
                 </div>

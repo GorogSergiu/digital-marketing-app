@@ -30,7 +30,7 @@ export default function NavbarComponent() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Navbar className="bg-white w-[70%] rounded-xl mt-[25px]">
+    <Navbar className="bg-navbarColor text-navbarTextColor w-[70%] rounded-xl mt-[25px]">
       <NavbarBrand>
         <FontAwesomeIcon icon={faChevronCircleDown} />
         <Link href="/" className="font-bold text-inherit pl-[10px]">
@@ -38,14 +38,18 @@ export default function NavbarComponent() {
         </Link>
       </NavbarBrand>
       <NavbarContent className="hidden md:flex gap-4" justify="center">
-        <Dropdown isOpen={isOpen} onOpenChange={setIsOpen}>
+        <Dropdown
+          isOpen={isOpen}
+          onOpenChange={setIsOpen}
+          className="bg-navbarColor text-navbarTextColor"
+        >
           <NavbarItem>
             <DropdownTrigger>
               <Button
                 as={Link}
                 href="/"
                 disableRipple
-                className="p-0 bg-transparent data-[hover=true]:bg-transparent"
+                className="p-0 bg-transparent data-[hover=true]:bg-transparent text-navbarTextColor"
                 endContent={icons.chevron}
                 radius="sm"
                 variant="light"
@@ -69,7 +73,6 @@ export default function NavbarComponent() {
               <DropdownItem
                 key={index}
                 description={item.description}
-                className=""
                 color="danger"
               >
                 {item.label}
@@ -79,7 +82,11 @@ export default function NavbarComponent() {
         </Dropdown>
         {siteConfig.navItems.map((item, index) => (
           <NavbarItem isActive key={index}>
-            <Link href={item.href} aria-current="page" className="text-[black]">
+            <Link
+              href={item.href}
+              aria-current="page"
+              className="text-secondaryTextColor"
+            >
               {item.label}
             </Link>
           </NavbarItem>
@@ -99,9 +106,9 @@ export default function NavbarComponent() {
           >
             <Button
               variant="solid"
-              className="bg-[#007BFF] hover:bg-[#FF6347] p-[10px] rounded-[5px] border-none"
+              className="bg-buttonsColor hover:bg-buttonsHover p-[10px] rounded-[5px] border-none shadow-[3px_3px_0px_0px_#BBE0E8]"
             >
-              <p className="text-[12px] text-[white] font-bold">VIEW PLANS</p>
+              <p className="text-[12px] text-navbarTextColor font-bold">VIEW PLANS</p>
             </Button>
           </motion.div>
         </NavbarItem>

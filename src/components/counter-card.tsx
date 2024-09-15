@@ -19,10 +19,10 @@ const CounterCard: React.FC<CounterCardProps> = ({ type, title, value }) => {
         damping: 17,
       }}
     >
-      <Card className="w-[300px] h-[250px] bg-[white] border-[5px] border-[#A0D7FF]">
+      <Card className="w-[300px] h-[250px] bg-[white] border-[5px] border-cardBorderColor">
         <CardBody className="flex items-center justify-center">
           <h3
-            className="font-3d text-[20px] text-[#FF6347]"
+            className="font-3d text-[20px] text-headersColor"
             style={{
               textShadow: `
                       1px 1px 0 #A0D7FF,
@@ -37,13 +37,13 @@ const CounterCard: React.FC<CounterCardProps> = ({ type, title, value }) => {
           <div className="flex items-center justify-center">
             <Counter
               value={value}
-              className="text-[100px] text-[#007BFF] font-3d"
+              className="text-[100px] text-buttonsColor font-3d"
             />
             {type === "million" && (
-              <span className="text-[100px] font-3d text-[#007BFF]">m</span>
+              <span className="text-[100px] font-3d text-buttonsColor">m</span>
             )}
             {type === "thousand" && (
-              <span className="text-[100px] font-3d text-[#007BFF]">k</span>
+              <span className="text-[100px] font-3d text-buttonsColor">k</span>
             )}
           </div>
         </CardBody>

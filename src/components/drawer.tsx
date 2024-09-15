@@ -56,8 +56,8 @@ export default function Drawer() {
           onClick={toggleDrawer("right", false)}
           icon={faClose}
           size="xl"
-          color="white"
-          className="p-[5px] cursor-pointer bg-[#FF6347] rounded-[5px] shadow-[4px_4px_0px_0px_rgba(160,215,255,1)]"
+          color="#074978"
+          className="p-[5px] cursor-pointer bg-buttonsColor rounded-[5px] shadow-[4px_4px_0px_0px_rgba(160,215,255,1)]"
         />
       </div>
       <ListItemButton onClick={handleClick}>
@@ -93,28 +93,28 @@ export default function Drawer() {
           </ListItem>
         ))}
       </List>
-      <Divider className="w-[full] h-[10px] bg-[#007BFF] rounded m-[10px]" />
+      <Divider className="w-[full] h-[10px] bg-cardBorderColor rounded m-[10px]" />
       <div className="flex flex-row gap-4 p-[15px]">
         <FontAwesomeIcon
           onClick={() => {}}
           icon={faInstagram}
           size="2xl"
-          color="white"
-          className="p-[5px] cursor-pointer bg-[#FF6347] rounded-[5px] shadow-[4px_4px_0px_0px_rgba(160,215,255,1)]"
+          color="#074978"
+          className="p-[5px] cursor-pointer bg-buttonsColor rounded-[5px] shadow-[4px_4px_0px_0px_rgba(160,215,255,1)]"
         />
         <FontAwesomeIcon
           onClick={() => {}}
           icon={faFacebookSquare}
           size="2xl"
-          color="white"
-          className="p-[5px] cursor-pointer bg-[#FF6347] rounded-[5px] shadow-[4px_4px_0px_0px_rgba(160,215,255,1)]"
+          color="#074978"
+          className="p-[5px] cursor-pointer bg-buttonsColor rounded-[5px] shadow-[4px_4px_0px_0px_rgba(160,215,255,1)]"
         />
         <FontAwesomeIcon
           onClick={() => {}}
           icon={faLinkedin}
           size="2xl"
-          color="white"
-          className="p-[5px] cursor-pointer bg-[#FF6347] rounded-[5px] shadow-[4px_4px_0px_0px_rgba(160,215,255,1)]"
+          color="#074978"
+          className="p-[5px] cursor-pointer bg-buttonsColor rounded-[5px] shadow-[4px_4px_0px_0px_rgba(160,215,255,1)]"
         />
       </div>
     </Box>
@@ -126,9 +126,9 @@ export default function Drawer() {
         <Button onClick={toggleDrawer("right", true)}>
           <FontAwesomeIcon
             icon={faBars}
-            color="white"
+            color="#074978"
             size="xl"
-            className="p-[5px] cursor-pointer bg-[#FF6347] rounded-[5px] shadow-[4px_4px_0px_0px_rgba(160,215,255,1)]"
+            className="p-[5px] cursor-pointer bg-buttonsColor rounded-[5px] shadow-[4px_4px_0px_0px_rgba(160,215,255,1)]"
           />
         </Button>
         <SwipeableDrawer

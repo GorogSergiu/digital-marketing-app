@@ -8,7 +8,7 @@ export default function DefaultLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="bg-wave-top-homepage bg-cover bg-no-repeat relative flex flex-col h-screen">
+    <div className="bg-[FFF1D0] bg-cover relative flex flex-col h-screen">
       <div className="flex flex-row items-center justify-center top-10">
         <NavbarComponent />
       </div>

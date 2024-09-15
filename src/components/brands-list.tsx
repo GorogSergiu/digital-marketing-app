@@ -1,6 +1,7 @@
 import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
 import { motion } from "framer-motion";
 import { ListOfBrands } from "@/items/items";
+import { customSmallTextShadow } from "@/styles/customStyles";
 
 const BrandsList = () => {
   return (
@@ -17,7 +18,7 @@ const BrandsList = () => {
         >
           <Card
             key={index}
-            className=" bg-[white] border-[5px] border-[#A0D7FF]"
+            className=" bg-[white] border-[5px] border-cardBorderColor"
           >
             <CardBody className="overflow-visible items-center justify-center">
               <Image
@@ -28,15 +29,8 @@ const BrandsList = () => {
             </CardBody>
             <CardFooter className="text-small justify-center items-center">
               <h4
-                className="font-3d text-[20px] text-[#FF6347]"
-                style={{
-                  textShadow: `
-                      1px 1px 0 #A0D7FF,
-                      2px 2px 0 #A0D7FF,
-                      4px 4px 0 #A0D7FF,
-                      6px 6px 0 #A0D7FF
-                    `,
-                }}
+                className="font-3d text-[20px] text-headersColor"
+                style={customSmallTextShadow}
               >
                 {item.title}
               </h4>

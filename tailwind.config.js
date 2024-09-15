@@ -13,9 +13,28 @@ module.exports = {
     extend: {
       colors: {
         danger: {
-          DEFAULT: "#FF6347", 
-          hover: "#007BFF",
-          active: "#FF6347",
+          DEFAULT: "#2EC4B6",
+        },
+        buttonsColor: {
+          DEFAULT: "#FEB775",
+        },
+        buttonsHover: {
+          DEFAULT: "#AE371F",
+        },
+        headersColor: {
+          DEFAULT: "#074978",
+        },
+        cardBorderColor: {
+          DEFAULT: "#074978",
+        },
+        textColor: {
+          DEFAULT: "#6A5E44",
+        },
+        navbarColor: {
+          DEFAULT: "#074978",
+        },
+        navbarTextColor: {
+          DEFAULT: "#FFFFFF",
         },
       },
     },
