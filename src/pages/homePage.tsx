@@ -16,7 +16,10 @@ export default function HomePage() {
   return (
     <DefaultLayout>
       <section className="flex flex-col items-center justify-center">
-        <Parallax pages={isMobile ? 5 : 4.5} style={{ top: "0", left: "0", backgroundColor: "#FFF1D0" }}>
+        <Parallax
+          pages={isMobile ? 5 : 3.5}
+          style={{ top: "15px", left: "0", backgroundColor: "#FFF1D0" }}
+        >
           {/* First Section */}
           <ParallaxLayer
             offset={0}
@@ -27,7 +30,7 @@ export default function HomePage() {
               backgroundSize: "cover",
             }}
           />
-          <ParallaxLayer offset={0.1} speed={0.5} factor={1}>
+          <ParallaxLayer offset={0} speed={0.5} factor={1}>
             <div className="w-full min-h-screen flex items-center justify-center">
               <div className="w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] flex flex-col items-center justify-center">
                 <h1
@@ -77,7 +80,7 @@ export default function HomePage() {
               backgroundSize: "cover",
             }}
           />
-          <ParallaxLayer offset={1} speed={0.5} factor={1}>
+          <ParallaxLayer offset={isMobile ? 1 : 0.8} speed={0.5} factor={1}>
             <div className="w-full min-h-screen flex flex-col justify-center items-center p-4 md:p-8">
               <div
                 className="text-[40px] sm:text-[50px] md:text-[70px] font-3d text-center text-headersColor mb-[50px] md:mb-[100px] w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%]"
@@ -85,7 +88,7 @@ export default function HomePage() {
               >
                 Our achievements
               </div>
-              <div className="flex flex-col md:flex-row items-center justify-center gap-[50px]">
+              <div className="flex flex-col lg:flex-row items-center justify-center gap-[50px]">
                 <CounterCard title="Clients" value={447} />
                 <Divider
                   orientation="vertical"
@@ -115,7 +118,7 @@ export default function HomePage() {
               backgroundSize: "cover",
             }}
           />
-          <ParallaxLayer offset={2} speed={0.5} factor={1}>
+          <ParallaxLayer offset={isMobile ? 2 : 1.5} speed={0.5} factor={1}>
             <div className="w-full min-h-screen flex items-center justify-center">
               <div className="w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%]">
                 <div
@@ -144,7 +147,7 @@ export default function HomePage() {
           </ParallaxLayer>
 
           {/* Fourth Section */}
-          <ParallaxLayer offset={3} speed={0.5} factor={1}>
+          <ParallaxLayer offset={isMobile ? 3 : 2.1} speed={0.5} factor={1}>
             <div className="w-full min-h-screen flex flex-col items-center justify-center mt-[50px] md:mt-[200px] p-4">
               <div className="w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%]">
                 <div

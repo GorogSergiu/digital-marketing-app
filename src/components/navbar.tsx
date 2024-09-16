@@ -4,6 +4,7 @@ import {
   NavbarContent,
   NavbarItem,
   Link,
+  Image,
   Button,
   DropdownItem,
   DropdownTrigger,
@@ -32,9 +33,8 @@ export default function NavbarComponent() {
   return (
     <Navbar className="bg-navbarColor text-navbarTextColor w-[70%] rounded-xl mt-[25px]">
       <NavbarBrand>
-        <FontAwesomeIcon icon={faChevronCircleDown} />
         <Link href="/" className="font-bold text-inherit pl-[10px]">
-          <p>GGROWW</p>
+          <Image src="/logo-ggroww.png" height={"100px"} width={"100px"} />
         </Link>
       </NavbarBrand>
       <NavbarContent className="hidden md:flex gap-4" justify="center">
@@ -74,6 +74,7 @@ export default function NavbarComponent() {
                 key={index}
                 description={item.description}
                 color="danger"
+                className="text-navbarTextColor"
               >
                 {item.label}
               </DropdownItem>
@@ -108,7 +109,9 @@ export default function NavbarComponent() {
               variant="solid"
               className="bg-buttonsColor hover:bg-buttonsHover p-[10px] rounded-[5px] border-none shadow-[3px_3px_0px_0px_#BBE0E8]"
             >
-              <p className="text-[12px] text-navbarTextColor font-bold">VIEW PLANS</p>
+              <p className="text-[12px] text-navbarTextColor font-bold">
+                VIEW PLANS
+              </p>
             </Button>
           </motion.div>
         </NavbarItem>

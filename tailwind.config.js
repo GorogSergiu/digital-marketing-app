@@ -13,7 +13,7 @@ module.exports = {
     extend: {
       colors: {
         danger: {
-          DEFAULT: "#2EC4B6",
+          DEFAULT: "#AE371F",
         },
         buttonsColor: {
           DEFAULT: "#FEB775",
