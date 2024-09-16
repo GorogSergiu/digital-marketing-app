@@ -61,7 +61,7 @@ export default function Drawer() {
         />
       </div>
       <ListItemButton onClick={handleClick}>
-        <ListItemText primary="Services" className="text-[600]" />
+        <span className="text-[18px] text-[black]">Services</span>
       </ListItemButton>
       <Collapse in={!open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
@@ -82,7 +82,7 @@ export default function Drawer() {
           </div>
         </List>
       </Collapse>
-      <List>
+      <List sx={{ padding: 0 }}>
         {siteConfig.navItems.map((item, index) => (
           <ListItem key={index} disablePadding>
             <ListItemButton>
