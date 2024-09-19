@@ -23,7 +23,7 @@ export default function HomePage() {
           {/* First Section */}
           <ParallaxLayer
             offset={0}
-            speed={1}
+            speed={2}
             factor={1.5}
             style={{
               backgroundImage: "url(/bej-wave.svg)",
